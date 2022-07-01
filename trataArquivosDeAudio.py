@@ -10,6 +10,8 @@ diretorio_base = "/home/falanga/Downloads/jordana-py/audio02-1/audio/"
 
 diretorio_destino = "/home/falanga/Downloads/jordana-py/saida/"
 
+nome_arquivo_de_definicao_de_nome = "/home/falanga/workspaces/conda/jordana/speaker_wordlist.cvs"
+
 # Recupera os diretórios de control e dysarthric
 lista_base_de_diretorios = get_dir(diretorio_base, 1)
 
@@ -25,7 +27,7 @@ for diretorio in lista_base_de_diretorios:
         # Recupera os nomes dos arquivos presentes no diretório
         listaDeFiles: list[str] = get_dir(diretorio_atual, 0)
         # Atribui as palavras faladas no audio ao nome do arquivo de acordo com a lista em speaker_wordlist.cvs
-        lista_de_arquivos_com_informacoes_de_tipo = get_nome_info(listaDeFiles, "speaker_wordlist.cvs")
+        lista_de_arquivos_com_informacoes_de_tipo = get_nome_info(listaDeFiles, nome_arquivo_de_definicao_de_nome)
         # Move cada um dos arquivos para o destino
         for nome_do_arquivo, padrao_possivel_de_nome in lista_de_arquivos_com_informacoes_de_tipo.items():
             arquivo_origem = diretorio_atual + "/" + nome_do_arquivo
