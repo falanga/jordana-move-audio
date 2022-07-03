@@ -7,7 +7,8 @@ conda install -c anaconda pandas
 conda install -c numba numba
 
 
-** Para acionar bibliotecas no anaconda:
+# Para acionar bibliotecas no anaconda:
+
 
 procurar no google:
 
